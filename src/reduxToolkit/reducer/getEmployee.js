@@ -55,6 +55,8 @@ const toolkitSlice = createSlice({
                 favKey.push(action.payload.id)
             }
             localStorage.setItem('favorites', JSON.stringify(array))
+            state.favEmployee = array
+            state.arrayId = favKey
         },
         [getFavEmployee](state) {
             let array = []

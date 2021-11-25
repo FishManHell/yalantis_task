@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {
     BlockForEmp,
     BlockRadioButton,
@@ -6,12 +6,13 @@ import {
     Text,
     TextInformRadioButton
 } from "../styledComponents/EmployeeItemStyled";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {actionEmployee} from "../reduxToolkit/reducer/getEmployee";
 
 const Item = ({value}) => {
     const dispatch = useDispatch()
     const [bool, setBool] = useState(false);
+    const {arrayId} = useSelector(state => state.EmployeeReducer)
 
     const handleBool = (boolean) => setBool(boolean);
 
@@ -24,6 +25,17 @@ const Item = ({value}) => {
         handleBool(false)
         dispatch(actionEmployee(value.id))
     }
+
+
+    const changeButton = useCallback( () => {
+        const id = value.id
+        const check = arrayId.includes(id)
+        return check ? setBool(true) : setBool(false)
+    }, [arrayId, value.id])
+
+    useEffect(() => {
+        changeButton()
+    }, [changeButton, bool])
 
     return (
         <BlockForEmp>

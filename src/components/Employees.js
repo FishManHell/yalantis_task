@@ -23,7 +23,6 @@ const Employees = () => {
                 }
             })
         })
-
         return setEmp(array)
     }
 

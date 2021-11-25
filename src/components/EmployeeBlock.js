@@ -6,7 +6,6 @@ const EmployeeBlock = ({item}) => {
     return (
         <BlockForEmployee>
             <MainText> {item.letters}</MainText>
-
             {!item.arrayObj.length
                 ?
                 <Text>No Employees</Text>
