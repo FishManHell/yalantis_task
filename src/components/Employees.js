@@ -3,9 +3,10 @@ import {MainTextEmployee, WrapperEmployee} from "../styledComponents/EmployeesSt
 import {useSelector} from "react-redux";
 import EmployeeBlock from "./EmployeeBlock";
 import {alphabet} from "../utils/arrayUtils";
+import Loader from "./Loader/Loader";
 
 const Employees = () => {
-    const {employeesArray} = useSelector(state => state.EmployeeReducer);
+    const {employeesArray, loading} = useSelector(state => state.EmployeeReducer);
     const [emp, setEmp] = useState([]);
 
     useEffect(() => {
@@ -26,10 +27,18 @@ const Employees = () => {
         return setEmp(array)
     }
 
+    const showEmployees = () => {
+        return emp.map(item => <EmployeeBlock item={item} key={item.letters}/>)
+    }
+
+    const showLoading = () => {
+        return <Loader/>
+    }
+
     return (
         <WrapperEmployee>
             <MainTextEmployee>Employee</MainTextEmployee>
-            {emp.map(item => <EmployeeBlock item={item} key={item.letters}/>)}
+            {loading ? showLoading() : showEmployees()}
         </WrapperEmployee>
     );
 };

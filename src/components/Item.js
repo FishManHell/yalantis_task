@@ -18,6 +18,7 @@ const Item = ({value}) => {
 
     const addInFavArray = () => {
         handleBool(true)
+
         dispatch(addEmployee(value))
     }
 
@@ -41,7 +42,7 @@ const Item = ({value}) => {
 
     return (
         <BlockForEmp>
-            <Text>{value.firstName} <br/> {value.lastName}</Text>
+            <Text color={bool ? '#4342FF' : '#fff'}>{value.firstName} <br/> {value.lastName}</Text>
             <BlockRadioButton>
                 <RadioButton type={'radio'} checked={!bool} onChange={() => handleBool(false)}/>
                 <TextInformRadioButton onClick={removeInFavArray}>Not active</TextInformRadioButton>

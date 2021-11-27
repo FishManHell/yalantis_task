@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 
 
 export const BlockForEmployee = styled.div`
@@ -15,7 +15,7 @@ export const BlockForEmp = styled.div`
 `
 
 export const Text = styled.span`
-  color: white;
+    color: ${props => props.color};
 `
 
 export const MainText = styled.h2`

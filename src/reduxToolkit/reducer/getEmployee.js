@@ -4,8 +4,6 @@ import {getEmployeeTest} from "../asyncThunk/asyncThunk";
 
 const initialState = {
     employeesArray: [],
-    favEmployee: [],
-    arrayId: [],
     loading: false,
     error: null
 }
@@ -21,7 +19,7 @@ const toolkitSlice = createSlice({
             state.error = null
         },
         [getEmployeeTest.fulfilled]: (state, action) => {
-            state.employeesArray = action.payload
+            state.employeesArray = action.payload.sort((a, b) => a.firstName > b.firstName ? 1 : -1)
             state.loading = false
         },
         [getEmployeeTest.rejected]: (state, action) => {
