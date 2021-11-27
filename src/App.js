@@ -3,7 +3,8 @@ import {useDispatch} from "react-redux";
 import Employees from "./components/Employees";
 import EmployeesBirthday from "./components/EmployeesBirthday";
 import {Container, Wrapper} from "./styledComponents/WrapperStyled";
-import {getEmployeeTest, getFavEmployee} from "./reduxToolkit/reducer/getEmployee";
+import {getFavEmployee} from "./reduxToolkit/action/action";
+import {getEmployeeTest} from "./reduxToolkit/asyncThunk/asyncThunk";
 
 const App = () => {
     const dispatch = useDispatch();

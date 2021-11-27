@@ -8,7 +8,7 @@ import {
 import {useSelector} from "react-redux";
 
 const EmployeesBirthday = () => {
-    const {favEmployee} = useSelector(state => state.EmployeeReducer);
+    const {favEmployee} = useSelector(state => state.FavReducer);
 
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 

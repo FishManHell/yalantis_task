@@ -26,7 +26,6 @@ const Employees = () => {
         return setEmp(array)
     }
 
-
     return (
         <WrapperEmployee>
             <MainTextEmployee>Employee</MainTextEmployee>
