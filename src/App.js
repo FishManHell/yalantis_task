@@ -26,3 +26,6 @@ const App = () => {
 };
 
 export default App;
+
+
+// решить вопрос с добавлением месяцев и внедрения в них favEmployee

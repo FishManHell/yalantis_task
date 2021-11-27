@@ -1,11 +1,5 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import {
-    BlockForEmp,
-    BlockRadioButton,
-    RadioButton,
-    Text,
-    TextInformRadioButton
-} from "../../styledComponents/EmployeeItemStyled";
+import {BlockForEmp, BlockRadioButton, RadioButton, Text, TextInformRadioButton} from "../../styledComponents/EmployeeItemStyled";
 import {useDispatch, useSelector} from "react-redux";
 import {addEmployee, removeEmployee} from "../../reduxToolkit/action/action";
 
