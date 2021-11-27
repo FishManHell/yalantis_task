@@ -5,20 +5,19 @@ import {
     RadioButton,
     Text,
     TextInformRadioButton
-} from "../styledComponents/EmployeeItemStyled";
+} from "../../styledComponents/EmployeeItemStyled";
 import {useDispatch, useSelector} from "react-redux";
-import {addEmployee, removeEmployee} from "../reduxToolkit/action/action";
+import {addEmployee, removeEmployee} from "../../reduxToolkit/action/action";
 
 const Item = ({value}) => {
     const dispatch = useDispatch()
     const [bool, setBool] = useState(false);
-    const {favIdPost, favEmployee} = useSelector(state => state.FavReducer)
+    const {favIdPost, favEmployee} = useSelector(state => state.FavReducer);
 
     const handleBool = (boolean) => setBool(boolean);
 
     const addInFavArray = () => {
         handleBool(true)
-
         dispatch(addEmployee(value))
     }
 
@@ -27,10 +26,9 @@ const Item = ({value}) => {
         if (favEmployee.length) {
             dispatch(removeEmployee(value.id))
         }
-
     }
 
-    const changeButton = useCallback( () => {
+    const changeButton = useCallback(() => {
         const id = value.id
         const check = favIdPost.includes(id)
         return check ? setBool(true) : setBool(false)

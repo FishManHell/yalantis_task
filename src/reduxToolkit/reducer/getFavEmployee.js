@@ -13,16 +13,16 @@ const toolkitSlice = createSlice({
     reducers: {},
     extraReducers: {
         [addEmployee](state, action) {
-            const array = [...state.favEmployee]
+            const array = [...state.favEmployee];
             const favKey = [...state.favIdPost];
-            const found = array.some(employee => employee.id === action.payload.id)
+            const found = array.some(employee => employee.id === action.payload.id);
             if (!found) {
                 array.push(action.payload);
                 favKey.push(action.payload.id);
             }
             state.favEmployee = [...array].sort((a, b) => a.lastName > b.lastName ? 1 : -1);
-            state.favIdPost = [...favKey]
-            localStorage.setItem('favorites', JSON.stringify(array))
+            state.favIdPost = [...favKey];
+            localStorage.setItem('favorites', JSON.stringify(array));
         },
         [removeEmployee](state, action) {
             const array = [...state.favEmployee];

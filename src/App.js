@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {useDispatch} from "react-redux";
-import Employees from "./components/Employees";
-import EmployeesBirthday from "./components/EmployeesBirthday";
+import Employees from "./components/Employee/Employees";
+import EmployeesBirthday from "./components/EmployeesBirthday/EmployeesBirthday";
 import {Container, Wrapper} from "./styledComponents/WrapperStyled";
 import {getFavEmployee} from "./reduxToolkit/action/action";
 import {getEmployeeTest} from "./reduxToolkit/asyncThunk/asyncThunk";

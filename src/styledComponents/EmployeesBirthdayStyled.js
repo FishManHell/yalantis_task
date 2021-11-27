@@ -17,5 +17,9 @@ export const MainEmployeeBlock = styled.div`
 
 export const TextEmployeeBirtday = styled.span`
 
-color: white;
+  color: white;
+`
+
+export const MonthsEmployee = styled.h2`
+  color: white;
 `

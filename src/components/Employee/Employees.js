@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import {MainTextEmployee, WrapperEmployee} from "../styledComponents/EmployeesStyled";
+import {MainTextEmployee, WrapperEmployee} from "../../styledComponents/EmployeesStyled";
 import {useSelector} from "react-redux";
 import EmployeeBlock from "./EmployeeBlock";
-import {alphabet} from "../utils/arrayUtils";
-import Loader from "./Loader/Loader";
+import {alphabet} from "../../utils/arrayUtils";
+import Loader from "../Loader/Loader";
 
 const Employees = () => {
     const {employeesArray, loading} = useSelector(state => state.EmployeeReducer);
@@ -27,13 +27,9 @@ const Employees = () => {
         return setEmp(array)
     }
 
-    const showEmployees = () => {
-        return emp.map(item => <EmployeeBlock item={item} key={item.letters}/>)
-    }
+    const showEmployees = () => emp.map(item => <EmployeeBlock item={item} key={item.letters}/>)
 
-    const showLoading = () => {
-        return <Loader/>
-    }
+    const showLoading = () => <Loader/>
 
     return (
         <WrapperEmployee>
